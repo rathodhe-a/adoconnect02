@@ -8,6 +8,7 @@ To run an application, you must purchase computing, storage, and hardware. Cloud
 
 <img src="https://github.com/piyushsachdeva/AzureDevOps-Zero-to-Hero/assets/40286378/d3e3c678-760f-4b3f-bc31-2817634d1de6" alt="image" width=300 height=300 >
 
+![address_icon](https://github.com/rathodhe-a/adoconnect02/assets/96012693/1542c209-ddf5-4daa-aca0-c7158c386ebc)
 
 
 **Cloud Computing aims at**
