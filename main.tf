@@ -1,6 +1,6 @@
 data "azurerm_resource_group" "Schnieder_hemant" {
   name     = "Schnieder_hemant"
-  #location = "West US 2"
+  #location = "West US 2" 
 }
 
 resource "azurerm_service_plan" "asp1" {

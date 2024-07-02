@@ -5,5 +5,5 @@ variable "dotnet_framework_version" {
 
 variable "wap_name" {
   type = string
-  default = "wap-test-hemant-02"
+  default = "wap-test-hemant-02" 
 }
