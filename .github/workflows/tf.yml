@@ -1,8 +1,9 @@
 on:
   push:
-    branches: [main]
+    branches:
+      none
 
-name: On Release Main
+name: Terraform Deploy with tf.yml file
 
 jobs:
   terraform:
