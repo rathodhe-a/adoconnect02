@@ -1,6 +1,9 @@
 name: 'Terraform Configuration Drift Detection'
 
-on:[main]
+on:
+  push:
+    branches:
+      - main
 
 #Special permissions required for OIDC authentication
 permissions:
