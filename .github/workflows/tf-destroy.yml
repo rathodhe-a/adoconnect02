@@ -1,7 +1,7 @@
 on:
   push:
     branches:
-      main
+      none
 
 name: Terraform Destroy with tf-destroy.yml file
 
