@@ -1,14 +1,14 @@
 on:
   push:
     branches:
-      none
+      main
 
 name: Terraform Destroy with tf-destroy.yml file
 
 jobs:
   terraform:
     name: 'Terraform-Destroy'
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, Windows, x64, LTIM_VM]
     env:
       ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
       ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
