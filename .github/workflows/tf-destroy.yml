@@ -25,7 +25,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-
+      - name: set tf path
+        run: set PATH=%PATH%;C:\terraform_setup
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v2
         with:
