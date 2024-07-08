@@ -9,33 +9,32 @@ name: Terraform Destroy with tf-destroy.yml file
 jobs:
   terraform:
     name: 'Terraform-Destroy'
-    runs-on: windows-latest
-    #runs-on: [self-hosted, Windows, x64, LTIM_VM]
+    #runs-on: windows-latest
+    runs-on: [self-hosted, Windows, x64]
     env:
       ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
       ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
       ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
       ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
       TF_VERSION: 1.8.5
-      TERRAFORM_CLI_PATH: "C:\terraform_setup"
 
     defaults:
       run:
-        shell: bash
-        #working-directory: .
+        shell: cmd
+        working-directory: .
 
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      #- name: set tf path
-      #  run: set PATH=%PATH%;C:\terraform_setup
+        
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v2
         with:
           terraform_version: ${{ env.TF_VERSION }}
       
       - name: check tf version
-        run: dir
+        run: terraform --version
+        
      # - name: Terraform fmt
      #   id: fmt
      #   run: terraform fmt -check
