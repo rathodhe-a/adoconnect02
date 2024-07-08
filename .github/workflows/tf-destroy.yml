@@ -18,8 +18,8 @@ jobs:
 
     defaults:
       run:
-        shell: powershell
-        working-directory: .
+        shell: cmd
+        #working-directory: .
 
     steps:
       - name: Checkout
