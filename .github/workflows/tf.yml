@@ -2,7 +2,11 @@ on:
   push:
     branches:
       main
-
+permissions:
+  id-token: write
+  contents: read
+  pull-requests: write
+  
 name: Terraform Deploy with tf.yml file
 
 jobs:
