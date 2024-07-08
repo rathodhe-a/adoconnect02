@@ -8,7 +8,7 @@ name: Terraform Deploy with tf.yml file
 jobs:
   terraform:
     name: 'Terraform'
-    #runs-on: windows-latest
+   # runs-on: windows-latest
     runs-on: [self-hosted]
     env:
       ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
