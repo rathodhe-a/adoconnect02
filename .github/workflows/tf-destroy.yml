@@ -25,11 +25,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-    #  - name: Setup Terraform
-    #    uses: hashicorp/setup-terraform@v2
-    #    with:
-    #      terraform_version: ${{ env.TF_VERSION }}
-
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v2
+        with:
+          terraform_version: ${{ env.TF_VERSION }}
+      
+      - name: check tf version
+        run: terraform --version
      # - name: Terraform fmt
      #   id: fmt
      #   run: terraform fmt -check
