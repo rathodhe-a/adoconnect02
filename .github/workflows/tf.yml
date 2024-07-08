@@ -1,7 +1,7 @@
 on:
   push:
     branches:
-      main
+      none
 
 name: Terraform Deploy with tf.yml file
 
