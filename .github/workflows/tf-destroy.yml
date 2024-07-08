@@ -31,7 +31,7 @@ jobs:
           terraform_version: ${{ env.TF_VERSION }}
       
       - name: check tf version
-        run: terraform --version
+        run: dir
      # - name: Terraform fmt
      #   id: fmt
      #   run: terraform fmt -check
