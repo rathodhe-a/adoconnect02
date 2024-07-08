@@ -7,7 +7,7 @@ permissions:
   contents: read
   pull-requests: write
   
-name: Terraform Deploy with tf.yml file 
+name: Terraform Deploy with tf.yml file
 
 jobs:
   terraform:
