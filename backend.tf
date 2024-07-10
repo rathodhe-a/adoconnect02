@@ -4,6 +4,6 @@ terraform {
         storage_account_name = "stogterraformstate01" 
         container_name = "terraformstatefile" 
         key = "dev.terraform.tfstate"
-        key2 = __tfstatefile__
+        key2 = "__tfstatefile__"
       }
 }
