@@ -1,0 +1,57 @@
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      none
+permissions:
+  id-token: write
+  contents: read
+  pull-requests: write
+  
+name: Replace token test
+
+jobs:
+  ReplaceToken:
+    name: 'ReplaceToken'
+    runs-on: ubuntu-latest
+    # runs-on: [self-hosted]
+    env:
+      ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
+      ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
+      ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
+      ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
+      TF_VERSION: 1.6.2
+
+    defaults:
+      run:
+        shell: bash
+        working-directory: .
+       
+    steps:
+      - name: txt
+        uses: cschleiden/replace-tokens@v1
+        with:
+          tokenPrefix: '{'
+          tokenSuffix: '}'
+          files: '["hemant.txt"]'
+      - name: Display hemant.txt
+        run: cat hemant.txt
+        
+      - name: conf
+        uses: cschleiden/replace-tokens@v1
+        with:
+          tokenPrefix: '{'
+          tokenSuffix: '}'
+          files: '["hemant.conf"]'
+      - name: Display hemant.conf
+        run: cat hemant.conf
+        
+      - name: tf
+        uses: cschleiden/replace-tokens@v1
+        with:
+          tokenPrefix: '{'
+          tokenSuffix: '}'
+          files: '["hemant.tf"]'      
+          
+      - name: Display hemant.tf
+        run: cat hemant.tf        
