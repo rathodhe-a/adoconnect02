@@ -28,6 +28,9 @@ jobs:
         working-directory: .
        
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2   
+        
       - name: txt
         uses: cschleiden/replace-tokens@v1
         with:
@@ -43,6 +46,7 @@ jobs:
           tokenPrefix: '{'
           tokenSuffix: '}'
           files: '["hemant.conf"]'
+          
       - name: Display hemant.conf
         run: cat hemant.conf
         
