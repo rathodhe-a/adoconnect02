@@ -22,6 +22,7 @@ jobs:
       ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
       ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
       TF_VERSION: 1.6.2
+      tfstatefile: dev.terraform.tfstate
 
     defaults:
       run:
@@ -54,9 +55,9 @@ jobs:
       - name: tf
         uses: cschleiden/replace-tokens@v1
         with:
-          tokenPrefix: '{'
-          tokenSuffix: '}'
-          files: '["hemant.tf"]'      
+          tokenPrefix: '__'
+          tokenSuffix: '__'
+          files: '["backend.tf"]'      
           
-      - name: Display hemant.tf
-        run: cat hemant.tf        
+      - name: Display backend.tf
+        run: cat backend.tf        
