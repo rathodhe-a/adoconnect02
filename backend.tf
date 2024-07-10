@@ -3,6 +3,6 @@ terraform {
         resource_group_name = "Schnieder_hemant"  
         storage_account_name = "stogterraformstate01" 
         container_name = "terraformstatefile" 
-        key = "__tfstatefile__"
+        key = "dev.terraform.tfstate"
       }
 }
